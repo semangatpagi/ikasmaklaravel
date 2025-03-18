@@ -114,12 +114,6 @@ This will have the JavaScript loaded in all the files that extend this main layo
 
 ## UI components
 
-Now that you have successfully installed the project you can start using the UI components from Flowbite and Tailwind CSS to develop modern websites and web applications.
+Now that you have successfully installed the project you can start using the [UI components from Flowbite](https://flowbite.com/docs/getting-started/laravel/) and Tailwind CSS to develop modern websites and web applications.
 
 We recommend exploring the components using the search bar navigation (`cmd` or `ctrl` + `k`) or by browsing the components section of the sidebar on the left side of this page.
-
-## GitHub Starter kit
-
-Download or clone the [Flowbite Laravel](https://github.com/themesberg/tailwind-laravel-starter) Github boilerplate repository to get access to a project that already has Laravel, Tailwind CSS, and Flowbite set up for development.
-
-For even more resources and UI components you can check out [Flowbite Pro](https://flowbite.com/pro/).
