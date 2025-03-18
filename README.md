@@ -1,7 +1,5 @@
 # Laravel 12 and Tailwind CSS Starter
 
-Laravel is the most popular free and open-source PHP web framework that helps you build modern web applications and API's based on a model-view-controller (MVC) programming architecture. It's an iteration of the [Symfony](https://flowbite.com/docs/getting-started/symfony/) framework and it's being used by millions of developers and companies around the world.
-
 [Check out this guide](https://flowbite.com/docs/getting-started/laravel/) to learn how to set up a new Laravel project together with Tailwind CSS and the UI components from Flowbite to enhance your front-end development workflow.
 
 ## Create a Laravel app
