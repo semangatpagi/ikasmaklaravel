@@ -10,8 +10,12 @@ use App\Livewire\Auth\VerifyEmail;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
-    Route::get('login', Login::class)->name('login');
-    Route::get('register', Register::class)->name('register');
+    Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'show'])->name('login');
+    Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login.post');
+    
+    Route::get('register', [App\Http\Controllers\Auth\RegisterController::class, 'show'])->name('register');
+    Route::post('register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register.post');
+
     Route::get('forgot-password', ForgotPassword::class)->name('password.request');
     Route::get('reset-password/{token}', ResetPassword::class)->name('password.reset');
 });
