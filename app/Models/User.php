@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
@@ -19,17 +20,22 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var list<string>
      */
     protected $fillable = [
-        'nama_lengkap',
-        'nama_panggilan',
+        'name',
         'email',
         'password',
-        'angkatan',
-        'tahun_masuk',
-        'tahun_lulus',
+        'nama_lengkap',
+        'nama_panggilan',
+        'role',
+        'admin_verified_at',
+        'tempat_lahir',
+        'tanggal_lahir',
         'alamat_rumah',
         'provinsi_rumah',
         'kota_rumah',
         'whatsapp',
+        'facebook',
+        'instagram',
+        'linkedin',
         'pekerjaan',
         'perusahaan',
         'alamat_kantor',
@@ -37,10 +43,17 @@ class User extends Authenticatable implements MustVerifyEmail
         'kota_kantor',
         'nama_usaha',
         'bidang_usaha',
-        'saran',
         'foto',
-        'is_active',
-        'verification_token',
+        'foto_ktp',
+        'nomor_ktp',
+        'nomor_anggota',
+        'status_verifikasi',
+        'tahun_lulus',
+        'tahun_masuk',
+        'angkatan',
+        'jurusan',
+        'sekolah',
+        'gelar',
     ];
 
     /**
@@ -63,6 +76,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return [
             'email_verified_at' => 'datetime',
             'admin_verified_at' => 'datetime',
+            'tanggal_lahir' => 'date',
             'password' => 'hashed',
             'is_active' => 'boolean',
         ];
@@ -118,5 +132,25 @@ class User extends Authenticatable implements MustVerifyEmail
     public function isSuperAdmin(): bool
     {
         return $this->role === 'super_admin';
+    }
+
+    /**
+     * Mendapatkan riwayat pekerjaan pengguna
+     *
+     * @return HasMany<WorkExperience>
+     */
+    public function workExperiences(): HasMany
+    {
+        return $this->hasMany(WorkExperience::class);
+    }
+    
+    /**
+     * Mendapatkan riwayat pendidikan pengguna
+     *
+     * @return HasMany<Education>
+     */
+    public function educations(): HasMany
+    {
+        return $this->hasMany(Education::class);
     }
 }

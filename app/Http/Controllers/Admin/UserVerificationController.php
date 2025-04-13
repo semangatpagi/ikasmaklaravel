@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class UserVerificationController extends Controller
 {
@@ -14,12 +15,13 @@ class UserVerificationController extends Controller
      */
     public function index()
     {
-        $pendingUsers = User::whereNull('admin_verified_at')
-            ->whereNotNull('email_verified_at')
-            ->orderBy('created_at', 'desc')
-            ->paginate(10);
+        $usersToVerify = User::whereNotNull('email_verified_at')
+                                ->whereNull('admin_verified_at')
+                                ->where('role', 'unverified')
+                                ->orderBy('created_at', 'asc')
+                                ->paginate(15);
 
-        return view('admin.user-verification.index', compact('pendingUsers'));
+        return view('admin.verify-users', compact('usersToVerify'));
     }
 
     /**
@@ -99,5 +101,28 @@ class UserVerificationController extends Controller
 
         return redirect()->back()
             ->with('success', 'Role pengguna berhasil diubah.');
+    }
+
+    /**
+     * Mark the given user as verified by admin.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function verify(User $user)
+    {
+        // Pastikan user memang perlu diverifikasi
+        if ($user->email_verified_at && !$user->admin_verified_at && $user->role === 'unverified') {
+            $user->role = 'member'; // Ubah role menjadi member
+            $user->admin_verified_at = Carbon::now();
+            $user->save();
+
+            // Opsional: Kirim notifikasi ke user bahwa akunnya sudah diverifikasi admin
+            // Mail::to($user->email)->send(new YourAccountVerifiedByAdmin($user));
+
+            return redirect()->route('admin.users.verify.index')->with('success', 'User '.$user->nama_lengkap.' berhasil diverifikasi.');
+        } else {
+            return redirect()->route('admin.users.verify.index')->with('error', 'User ini tidak dapat diverifikasi saat ini atau sudah diverifikasi.');
+        }
     }
 }

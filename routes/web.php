@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\WorkExperienceController;
+use App\Http\Controllers\EducationController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\UserVerificationController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -64,10 +68,6 @@ Route::get('/datepicker', function () {
     return view('datepicker');
 })->name('datepicker');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
-
 // Halaman menunggu approval admin
 Route::view('waiting-approval', 'waiting-approval')
     ->middleware(['auth', 'verified'])
@@ -97,6 +97,11 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         Route::post('/{payment}/reject', [App\Http\Controllers\Admin\MembershipController::class, 'reject'])->name('reject');
         Route::post('/send-reminder/{user}', [App\Http\Controllers\Admin\MembershipController::class, 'sendReminder'])->name('send-reminder');
     });
+
+    // Route untuk menampilkan halaman verifikasi
+    Route::get('/verify-users', [UserVerificationController::class, 'index'])->name('users.verify.index');
+    // Route untuk memproses verifikasi user
+    Route::patch('/verify-users/{user}', [UserVerificationController::class, 'verify'])->name('users.verify.update');
 });
 
 // Route untuk Member+ Management
@@ -105,9 +110,37 @@ Route::middleware(['auth', 'verified'])->prefix('membership')->name('membership.
     Route::get('/history', [App\Http\Controllers\MembershipPaymentController::class, 'history'])->name('history');
     Route::get('/create', [App\Http\Controllers\MembershipPaymentController::class, 'create'])->name('create');
     Route::post('/store', [App\Http\Controllers\MembershipPaymentController::class, 'store'])->name('store');
+    
+    // Route untuk halaman alumni
+    Route::get('/alumni', [App\Http\Controllers\Membership\AlumniController::class, 'index'])->name('alumni');
+    
     Route::get('/{payment}', [App\Http\Controllers\MembershipPaymentController::class, 'show'])->name('show');
     Route::delete('/{payment}', [App\Http\Controllers\MembershipPaymentController::class, 'cancel'])->name('cancel');
 });
+
+// Route untuk profile dengan middleware langsung
+Route::get('profile', [App\Http\Controllers\ProfileController::class, 'show'])
+    ->middleware(['auth', 'verified', \App\Http\Middleware\CheckVerificationStatus::class])
+    ->name('profile');
+
+// Route untuk update foto profil
+Route::post('profile/update-photo', [App\Http\Controllers\ProfileController::class, 'updatePhoto'])
+    ->middleware(['auth', 'verified'])
+    ->name('profile.update-photo');
+
+// Route untuk update data profil
+Route::put('profile/update', [App\Http\Controllers\ProfileController::class, 'update'])
+    ->middleware(['auth', 'verified'])
+    ->name('profile.update');
+
+// Tambahkan rute dengan metode POST untuk update data profil sebagai alternatif
+Route::post('profile/update', [App\Http\Controllers\ProfileController::class, 'update'])
+    ->middleware(['auth', 'verified']);
+
+// Route untuk dashboard dengan middleware langsung
+Route::view('dashboard', 'dashboard')
+    ->middleware(['auth', 'verified', \App\Http\Middleware\CheckVerificationStatus::class])
+    ->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
@@ -129,6 +162,19 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
         ->middleware(['throttle:6,1'])
         ->name('verification.send');
+});
+
+// Rute untuk Riwayat Pekerjaan
+Route::middleware(['auth', 'verified'])->group(function () {
+    // Riwayat Pekerjaan
+    Route::post('/work-experiences', [WorkExperienceController::class, 'store'])->name('work-experiences.store');
+    Route::put('/work-experiences/{workExperience}', [WorkExperienceController::class, 'update'])->name('work-experiences.update');
+    Route::delete('/work-experiences/{workExperience}', [WorkExperienceController::class, 'destroy'])->name('work-experiences.destroy');
+    
+    // Riwayat Pendidikan
+    Route::post('/educations', [EducationController::class, 'store'])->name('educations.store');
+    Route::put('/educations/{education}', [EducationController::class, 'update'])->name('educations.update');
+    Route::delete('/educations/{education}', [EducationController::class, 'destroy'])->name('educations.destroy');
 });
 
 require __DIR__.'/auth.php';

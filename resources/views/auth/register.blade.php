@@ -281,8 +281,14 @@
                               <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Klik untuk Upload Foto</span> atau drag and drop</p>
                               <p class="text-xs text-gray-500">PNG atau JPG (MAX. 800x400px)</p>
                           </div>
-                          <input id="foto" name="foto" type="file" class="hidden" />
+                          <input id="foto" name="foto" type="file" class="hidden" accept="image/*" />
                       </label>
+                      <div id="foto-preview" class="hidden mt-4">
+                          <img id="preview-image" class="max-h-48 rounded-lg border border-gray-200" alt="Preview Foto">
+                          <button type="button" id="remove-foto" class="mt-2 text-sm text-red-600 hover:text-red-500">
+                              Hapus Foto
+                          </button>
+                      </div>
                   </div>
               </div>
           </div>
@@ -501,10 +507,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle confirmation button click
     const confirmButton = document.getElementById('confirmSubmit');
     confirmButton.addEventListener('click', function() {
-        // Submit form langsung tanpa validasi lagi
-        form.removeEventListener('submit', function(e) {
-            e.preventDefault();
-        });
+        // Submit form
         form.submit();
     });
     
@@ -551,6 +554,31 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             this.setCustomValidity('');
         }
+    });
+
+    // Preview foto
+    const fotoInput = document.getElementById('foto');
+    const fotoPreview = document.getElementById('foto-preview');
+    const previewImage = document.getElementById('preview-image');
+    const removeFotoButton = document.getElementById('remove-foto');
+
+    fotoInput.addEventListener('change', function(e) {
+        if (this.files && this.files[0]) {
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                previewImage.src = e.target.result;
+                fotoPreview.classList.remove('hidden');
+            }
+            
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+
+    removeFotoButton.addEventListener('click', function() {
+        fotoInput.value = '';
+        previewImage.src = '';
+        fotoPreview.classList.add('hidden');
     });
 });
 </script>

@@ -1,0 +1,1041 @@
+    <!-- Edit personal info modal -->
+    <div id="updatePribadiModal" tabindex="-1" aria-hidden="true" class="fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0">
+    <div class="relative max-h-full w-full max-w-2xl p-4">
+        <!-- Modal content -->
+        <form action="#" class="relative rounded-lg bg-white shadow dark:bg-gray-800">
+        <!-- Modal header -->
+        <div class="flex items-center justify-between rounded-t px-4 py-4 sm:px-5">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Update Data</h3>
+            <button
+            type="button"
+            class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+            data-modal-toggle="updatePribadiModal"
+            >
+            <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+                />
+            </svg>
+            <span class="sr-only">Close modal</span>
+            </button>
+        </div>
+        <div id="accordion-collapse-update-user" data-accordion="collapse">
+            <h2 id="accordion-collapse-heading-1">
+            <button
+                type="button"
+                class="flex w-full items-center justify-between bg-gray-50 px-4 py-4 text-left font-medium leading-none text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:border-gray-700 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800 sm:px-5"
+                data-accordion-target="#accordion-collapse-body-1"
+                aria-expanded="true"
+                aria-controls="accordion-collapse-body-1"
+            >
+                <span>General Information</span>
+                <svg data-accordion-icon="" class="h-5 w-5 shrink-0 rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7" />
+                </svg>
+            </button>
+            </h2>
+            <div id="accordion-collapse-body-1" class="" aria-labelledby="accordion-collapse-heading-1">
+            <div class="border-gray-200 p-4 dark:border-gray-700 sm:p-5">
+                <!-- Inputs -->
+                <div class="grid gap-4 sm:grid-cols-2">
+                <div class="sm:col-span-2">
+                    <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload avatar</label>
+                    <div class="w-full items-center sm:flex">
+                    <img class="mb-4 h-20 w-20 rounded-full sm:mb-0 sm:mr-4" src="http://localhost:1313/images/users/helene-engels.png" alt="Helene avatar" />
+                    <div class="w-full">
+                        <input
+                        class="w-full cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400"
+                        aria-describedby="file_input_help"
+                        id="file_input"
+                        type="file"
+                        />
+                        <p class="mb-3 mt-1 text-xs font-normal text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
+                        <div class="flex items-center space-x-2.5">
+                        <button
+                            type="button"
+                            class="inline-flex items-center rounded-lg bg-primary-700 px-3 py-2 text-center text-xs font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        >
+                            <svg class="-ml-0.5 mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd"
+                            />
+                            </svg>
+                            Upload new picture
+                        </button>
+                        <button
+                            type="button"
+                            class="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+                        >
+                            Delete
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="first-name" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">First Name</label>
+                    <input
+                    type="text"
+                    name="first-name"
+                    id="first-name"
+                    value="Bonnie"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="John"
+                    required=""
+                    />
+                </div>
+                <div>
+                    <label for="last-name" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+                    <input
+                    type="text"
+                    name="last-name"
+                    id="last-name"
+                    value="Green"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="Doe"
+                    required=""
+                    />
+                </div>
+                <div>
+                    <label for="email" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                    <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    value="bonnie.green@company.com"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="john@company.com"
+                    required=""
+                    />
+                </div>
+                <div>
+                    <label for="user-permissions" class="mb-2 inline-flex items-center text-sm font-medium text-gray-900 dark:text-white">
+                    User Permissions
+                    <button type="button" data-tooltip-target="tooltip-dark" data-tooltip-style="dark" class="ml-1 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white">
+                        <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            fill-rule="evenodd"
+                            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm9.008-3.018a1.502 1.502 0 0 1 2.522 1.159v.024a1.44 1.44 0 0 1-1.493 1.418 1 1 0 0 0-1.037.999V14a1 1 0 1 0 2 0v-.539a3.44 3.44 0 0 0 2.529-3.256 3.502 3.502 0 0 0-7-.255 1 1 0 0 0 2 .076c.014-.398.187-.774.48-1.044Zm.982 7.026a1 1 0 1 0 0 2H12a1 1 0 1 0 0-2h-.01Z"
+                            clip-rule="evenodd"
+                        />
+                        </svg>
+                        <span class="sr-only">User permission details</span>
+                    </button>
+                    <div id="tooltip-dark" role="tooltip" class="tooltip invisible absolute z-10 inline-block max-w-sm rounded-lg bg-gray-900 px-3 py-2 text-sm font-normal text-white opacity-0 shadow-sm dark:bg-gray-600">
+                        User permissions, part of the overall user management process, are access granted to users to specific resources such as files, applications, networks, or devices.
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    </label>
+                    <select
+                    id="user-permissions"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    >
+                    <option selected="">Operational</option>
+                    <option value="NO">Non Operational</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="job-title" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Job Title</label>
+                    <input
+                    type="text"
+                    name="job-title"
+                    id="job-title"
+                    value="Back-end software engineer"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="Ex. React Developer"
+                    required=""
+                    />
+                </div>
+                <div>
+                    <label for="languages" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Languages</label>
+                    <input
+                    type="text"
+                    name="languages"
+                    id="languages"
+                    value="English, German"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="Ex. English, Spanish"
+                    required=""
+                    />
+                </div>
+                <div>
+                    <label for="account" class="mb-2 inline-flex items-center text-sm font-medium text-gray-900 dark:text-white">
+                    Account
+                    <button type="button" data-tooltip-target="tooltip-account" data-tooltip-style="dark" class="ml-1 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white">
+                        <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            fill-rule="evenodd"
+                            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm9.008-3.018a1.502 1.502 0 0 1 2.522 1.159v.024a1.44 1.44 0 0 1-1.493 1.418 1 1 0 0 0-1.037.999V14a1 1 0 1 0 2 0v-.539a3.44 3.44 0 0 0 2.529-3.256 3.502 3.502 0 0 0-7-.255 1 1 0 0 0 2 .076c.014-.398.187-.774.48-1.044Zm.982 7.026a1 1 0 1 0 0 2H12a1 1 0 1 0 0-2h-.01Z"
+                            clip-rule="evenodd"
+                        />
+                        </svg>
+                        <span class="sr-only">Account details</span>
+                    </button>
+                    <div id="tooltip-account" role="tooltip" class="tooltip invisible absolute z-10 inline-block max-w-sm rounded-lg bg-gray-900 px-3 py-2 text-sm font-normal text-white opacity-0 shadow-sm dark:bg-gray-600">
+                        Choose here your account type.
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    </label>
+                    <select
+                    id="account"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    >
+                    <option selected="">PRO Account</option>
+                    <option value="DF">Default Account</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="user-role" class="mb-2 inline-flex items-center text-sm font-medium text-gray-900 dark:text-white">
+                    User Role
+                    <button type="button" data-tooltip-target="tooltip-user-role" data-tooltip-style="dark" class="ml-1 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white">
+                        <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            fill-rule="evenodd"
+                            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm9.008-3.018a1.502 1.502 0 0 1 2.522 1.159v.024a1.44 1.44 0 0 1-1.493 1.418 1 1 0 0 0-1.037.999V14a1 1 0 1 0 2 0v-.539a3.44 3.44 0 0 0 2.529-3.256 3.502 3.502 0 0 0-7-.255 1 1 0 0 0 2 .076c.014-.398.187-.774.48-1.044Zm.982 7.026a1 1 0 1 0 0 2H12a1 1 0 1 0 0-2h-.01Z"
+                            clip-rule="evenodd"
+                        />
+                        </svg>
+                        <span class="sr-only">User role details</span>
+                    </button>
+                    <div id="tooltip-user-role" role="tooltip" class="tooltip invisible absolute z-10 inline-block max-w-sm rounded-lg bg-gray-900 px-3 py-2 text-sm font-normal text-white opacity-0 shadow-sm dark:bg-gray-600">
+                        Flowbite provides 7 predefined roles: Owner, Admin, Editor, Contributor and Viewer. Assign the most suitable role to each user, giving them the most appropriate level of control.
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    </label>
+                    <select
+                    id="user-role"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    >
+                    <option selected="">Owner</option>
+                    <option value="AD">Admin</option>
+                    <option value="ED">Editor</option>
+                    <option value="CO">Contributor</option>
+                    <option value="VI">Viewer</option>
+                    </select>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="email-status" class="mb-2 inline-flex items-center text-sm font-medium text-gray-900 dark:text-white">
+                    Email Status
+                    <button type="button" data-tooltip-target="tooltip-email-status" data-tooltip-style="dark" class="ml-1 h-4 w-4 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white">
+                        <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            fill-rule="evenodd"
+                            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm9.008-3.018a1.502 1.502 0 0 1 2.522 1.159v.024a1.44 1.44 0 0 1-1.493 1.418 1 1 0 0 0-1.037.999V14a1 1 0 1 0 2 0v-.539a3.44 3.44 0 0 0 2.529-3.256 3.502 3.502 0 0 0-7-.255 1 1 0 0 0 2 .076c.014-.398.187-.774.48-1.044Zm.982 7.026a1 1 0 1 0 0 2H12a1 1 0 1 0 0-2h-.01Z"
+                            clip-rule="evenodd"
+                        />
+                        </svg>
+                        <span class="sr-only">Email status details</span>
+                    </button>
+                    <div id="tooltip-email-status" role="tooltip" class="tooltip invisible absolute z-10 inline-block max-w-sm rounded-lg bg-gray-900 px-3 py-2 text-sm font-normal text-white opacity-0 shadow-sm dark:bg-gray-600">
+                        As an administrator, you can view the status of a user's email. The status indicates whether a user's email is verified or not.
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    </label>
+                    <select
+                    id="email-status"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    >
+                    <option selected="">Verified</option>
+                    <option value="NV">Not verified</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="password" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                    <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="•••••••••"
+                    required=""
+                    />
+                </div>
+                <div>
+                    <label for="confirm-password" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Confirm password</label>
+                    <input
+                    type="password"
+                    name="confirm-password"
+                    id="confirm-password"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="•••••••••"
+                    required=""
+                    />
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="role">Assign Role</label>
+                    <div class="flex space-x-4">
+                    <div class="flex items-center">
+                        <input
+                        id="inline-checkbox"
+                        type="checkbox"
+                        value=""
+                        name="role"
+                        class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                        />
+                        <label for="inline-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Administrator</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input
+                        id="inline-2-checkbox"
+                        type="checkbox"
+                        value=""
+                        name="role"
+                        class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                        />
+                        <label for="inline-2-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Member</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input
+                        checked=""
+                        id="inline-checked-checkbox"
+                        type="checkbox"
+                        value=""
+                        name="role"
+                        class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                        />
+                        <label for="inline-checked-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Viewer</label>
+                    </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Status</div>
+                    <label for="status" class="relative inline-flex cursor-pointer items-center">
+                    <input type="checkbox" value="" id="status" class="peer sr-only" />
+                    <div
+                        class="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-primary-800"
+                    ></div>
+                    <span class="ml-3 text-sm font-medium text-gray-500 dark:text-gray-300">Inactive</span>
+                    </label>
+                </div>
+                </div>
+            </div>
+            </div>
+            <h2 id="accordion-collapse-heading-2">
+            <button
+                type="button"
+                class="flex w-full items-center justify-between border-t border-gray-200 bg-gray-50 px-4 py-4 text-left font-medium leading-none text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:border-gray-700 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800 sm:px-5"
+                data-accordion-target="#accordion-collapse-body-2"
+                aria-expanded="false"
+                aria-controls="accordion-collapse-body-2"
+            >
+                <span>Additional Information</span>
+                <svg data-accordion-icon="" class="h-5 w-5 shrink-0 rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7" />
+                </svg>
+            </button>
+            </h2>
+            <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+            <div class="border-gray-200 px-4 pt-4 dark:border-gray-700 sm:px-5 sm:pt-5">
+                <!-- Inputs -->
+                <div class="grid gap-4 sm:grid-cols-2">
+                <div class="col-span-2">
+                    <label for="skills" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Skills</label>
+                    <input
+                    type="text"
+                    name="skills"
+                    id="skills"
+                    value="Tailwind CSS, Flowbite, React"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="Ex. Figma, HTML, Javascript"
+                    required=""
+                    />
+                </div>
+                <div class="col-span-2">
+                    <label for="phone-number" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
+                    <input
+                    type="text"
+                    name="phone-number"
+                    id="phone-number"
+                    value="+1631 442 978"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="Ex. +1234 567 890"
+                    required=""
+                    />
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <label for="linkedin" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Linkedin URL</label>
+                    <input
+                    type="url"
+                    name="linkedin"
+                    id="linkedin"
+                    value="https://www.linkedin.com/in/bonniegreen/"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="Ex. https://www.linkedin.com/in/example/"
+                    required=""
+                    />
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <label for="facebook" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Facebook</label>
+                    <input
+                    type="url"
+                    name="facebook"
+                    id="facebook"
+                    value="https://www.facebook.com/bonniegreen"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="Ex. https://www.facebook.com/example"
+                    required=""
+                    />
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <label for="twitter" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Twitter</label>
+                    <input
+                    type="url"
+                    name="twitter"
+                    id="twitter"
+                    value="https://twitter.com/bonniegreen"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="Ex. https://twitter.com/example"
+                    required=""
+                    />
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <label for="personal-website" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Personal Website</label>
+                    <input
+                    type="url"
+                    name="personal-website"
+                    id="personal-website"
+                    value="https://flowbite.com"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="Ex. https://website.com"
+                    required=""
+                    />
+                </div>
+                <div class="col-span-2">
+                    <label for="country" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Country</label>
+                    <select
+                    id="country"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    >
+                    <option selected="">United States</option>
+                    <option value="NO">Australia</option>
+                    <option value="NO">United Kingdom</option>
+                    <option value="NO">Italy</option>
+                    <option value="NO">Germany</option>
+                    <option value="NO">Spain</option>
+                    <option value="NO">France</option>
+                    <option value="NO">Canada</option>
+                    </select>
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <label for="address" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Address</label>
+                    <input
+                    type="text"
+                    name="address"
+                    id="address"
+                    value="92 Milles Drive, Newark, NJ 07123"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="Ex. 92 Milles Drive, Newark, NJ 07123"
+                    required=""
+                    />
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <label for="timezone" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Timezone</label>
+                    <input
+                    type="text"
+                    name="timezone"
+                    id="timezone"
+                    value="GMT+3"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="Ex. GMT+2"
+                    required=""
+                    />
+                </div>
+                <div class="col-span-2">
+                    <label for="biography" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Biography</label>
+                    <textarea
+                    id="biography"
+                    rows="4"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder:text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                    placeholder="Write your biography..."
+                    >
+    Hello, I'm Helene Engels, USA Designer, Creating things that stand out, Featured by Adobe, Figma, Webflow and others, Daily design tips & resources, Exploring Web3.</textarea
+                    >
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4 px-4 py-4 sm:px-5 sm:py-5">
+            <button
+            type="submit"
+            class="rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            >
+            Update user
+            </button>
+            <button
+            type="button"
+            class="focus:outline-non inline-flex items-center rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+            >
+            <svg class="-ms-0.5 me-1.5 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                fill-rule="evenodd"
+                d="M8.6 2.6A2 2 0 0 1 10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 1 1 0 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a1 1 0 0 1 0-2h3V4c0-.5.2-1 .6-1.4ZM10 6h4V4h-4v2Zm1 4a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Zm4 0a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Z"
+                clip-rule="evenodd"
+                />
+            </svg>
+            Delete
+            </button>
+        </div>
+        </form>
+    </div>
+    </div>
+
+    <!-- Edit Profesional info modal -->
+    <div id="updateProfesiModal" tabindex="-1" aria-hidden="true" class="fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0">
+        <div class="relative max-h-full w-full max-w-2xl p-4">
+            <!-- Modal content -->
+            <form action="#" class="relative rounded-lg bg-white shadow dark:bg-gray-800">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between rounded-t px-4 py-4 sm:px-5">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Update Data</h3>
+                <button
+                type="button"
+                class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-toggle="updateProfesiModal"
+                >
+                <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                    fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                    />
+                </svg>
+                <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <div id="accordion-collapse-update-user" data-accordion="collapse">
+                <h2 id="accordion-collapse-heading-1">
+                <button
+                    type="button"
+                    class="flex w-full items-center justify-between bg-gray-50 px-4 py-4 text-left font-medium leading-none text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:border-gray-700 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800 sm:px-5"
+                    data-accordion-target="#accordion-collapse-body-1"
+                    aria-expanded="true"
+                    aria-controls="accordion-collapse-body-1"
+                >
+                    <span>Profesional Information</span>
+                    <svg data-accordion-icon="" class="h-5 w-5 shrink-0 rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7" />
+                    </svg>
+                </button>
+                </h2>
+                <div id="accordion-collapse-body-1" class="" aria-labelledby="accordion-collapse-heading-1">
+                <div class="border-gray-200 p-4 dark:border-gray-700 sm:p-5">
+                    <!-- Inputs -->
+                    <div class="grid gap-4 sm:grid-cols-2">
+                    <div class="sm:col-span-2">
+                        <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload avatar</label>
+                        <div class="w-full items-center sm:flex">
+                        <img class="mb-4 h-20 w-20 rounded-full sm:mb-0 sm:mr-4" src="http://localhost:1313/images/users/helene-engels.png" alt="Helene avatar" />
+                        <div class="w-full">
+                            <input
+                            class="w-full cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400"
+                            aria-describedby="file_input_help"
+                            id="file_input"
+                            type="file"
+                            />
+                            <p class="mb-3 mt-1 text-xs font-normal text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
+                            <div class="flex items-center space-x-2.5">
+                            <button
+                                type="button"
+                                class="inline-flex items-center rounded-lg bg-primary-700 px-3 py-2 text-center text-xs font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                            >
+                                <svg class="-ml-0.5 mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"
+                                />
+                                </svg>
+                                Upload new picture
+                            </button>
+                            <button
+                                type="button"
+                                class="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+                            >
+                                Delete
+                            </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="first-name" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">First Name</label>
+                        <input
+                        type="text"
+                        name="first-name"
+                        id="first-name"
+                        value="Bonnie"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="John"
+                        required=""
+                        />
+                    </div>
+                    <div>
+                        <label for="last-name" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+                        <input
+                        type="text"
+                        name="last-name"
+                        id="last-name"
+                        value="Green"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="Doe"
+                        required=""
+                        />
+                    </div>
+                    <div>
+                        <label for="email" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                        <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        value="bonnie.green@company.com"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="john@company.com"
+                        required=""
+                        />
+                    </div>
+                    <div>
+                        <label for="user-permissions" class="mb-2 inline-flex items-center text-sm font-medium text-gray-900 dark:text-white">
+                        User Permissions
+                        <button type="button" data-tooltip-target="tooltip-dark" data-tooltip-style="dark" class="ml-1 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white">
+                            <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                fill-rule="evenodd"
+                                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm9.008-3.018a1.502 1.502 0 0 1 2.522 1.159v.024a1.44 1.44 0 0 1-1.493 1.418 1 1 0 0 0-1.037.999V14a1 1 0 1 0 2 0v-.539a3.44 3.44 0 0 0 2.529-3.256 3.502 3.502 0 0 0-7-.255 1 1 0 0 0 2 .076c.014-.398.187-.774.48-1.044Zm.982 7.026a1 1 0 1 0 0 2H12a1 1 0 1 0 0-2h-.01Z"
+                                clip-rule="evenodd"
+                            />
+                            </svg>
+                            <span class="sr-only">User permission details</span>
+                        </button>
+                        <div id="tooltip-dark" role="tooltip" class="tooltip invisible absolute z-10 inline-block max-w-sm rounded-lg bg-gray-900 px-3 py-2 text-sm font-normal text-white opacity-0 shadow-sm dark:bg-gray-600">
+                            User permissions, part of the overall user management process, are access granted to users to specific resources such as files, applications, networks, or devices.
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                        </label>
+                        <select
+                        id="user-permissions"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        >
+                        <option selected="">Operational</option>
+                        <option value="NO">Non Operational</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="job-title" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Job Title</label>
+                        <input
+                        type="text"
+                        name="job-title"
+                        id="job-title"
+                        value="Back-end software engineer"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="Ex. React Developer"
+                        required=""
+                        />
+                    </div>
+                    <div>
+                        <label for="languages" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Languages</label>
+                        <input
+                        type="text"
+                        name="languages"
+                        id="languages"
+                        value="English, German"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="Ex. English, Spanish"
+                        required=""
+                        />
+                    </div>
+                    <div>
+                        <label for="account" class="mb-2 inline-flex items-center text-sm font-medium text-gray-900 dark:text-white">
+                        Account
+                        <button type="button" data-tooltip-target="tooltip-account" data-tooltip-style="dark" class="ml-1 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white">
+                            <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                fill-rule="evenodd"
+                                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm9.008-3.018a1.502 1.502 0 0 1 2.522 1.159v.024a1.44 1.44 0 0 1-1.493 1.418 1 1 0 0 0-1.037.999V14a1 1 0 1 0 2 0v-.539a3.44 3.44 0 0 0 2.529-3.256 3.502 3.502 0 0 0-7-.255 1 1 0 0 0 2 .076c.014-.398.187-.774.48-1.044Zm.982 7.026a1 1 0 1 0 0 2H12a1 1 0 1 0 0-2h-.01Z"
+                                clip-rule="evenodd"
+                            />
+                            </svg>
+                            <span class="sr-only">Account details</span>
+                        </button>
+                        <div id="tooltip-account" role="tooltip" class="tooltip invisible absolute z-10 inline-block max-w-sm rounded-lg bg-gray-900 px-3 py-2 text-sm font-normal text-white opacity-0 shadow-sm dark:bg-gray-600">
+                            Choose here your account type.
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                        </label>
+                        <select
+                        id="account"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        >
+                        <option selected="">PRO Account</option>
+                        <option value="DF">Default Account</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="user-role" class="mb-2 inline-flex items-center text-sm font-medium text-gray-900 dark:text-white">
+                        User Role
+                        <button type="button" data-tooltip-target="tooltip-user-role" data-tooltip-style="dark" class="ml-1 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white">
+                            <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                fill-rule="evenodd"
+                                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm9.008-3.018a1.502 1.502 0 0 1 2.522 1.159v.024a1.44 1.44 0 0 1-1.493 1.418 1 1 0 0 0-1.037.999V14a1 1 0 1 0 2 0v-.539a3.44 3.44 0 0 0 2.529-3.256 3.502 3.502 0 0 0-7-.255 1 1 0 0 0 2 .076c.014-.398.187-.774.48-1.044Zm.982 7.026a1 1 0 1 0 0 2H12a1 1 0 1 0 0-2h-.01Z"
+                                clip-rule="evenodd"
+                            />
+                            </svg>
+                            <span class="sr-only">User role details</span>
+                        </button>
+                        <div id="tooltip-user-role" role="tooltip" class="tooltip invisible absolute z-10 inline-block max-w-sm rounded-lg bg-gray-900 px-3 py-2 text-sm font-normal text-white opacity-0 shadow-sm dark:bg-gray-600">
+                            Flowbite provides 7 predefined roles: Owner, Admin, Editor, Contributor and Viewer. Assign the most suitable role to each user, giving them the most appropriate level of control.
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                        </label>
+                        <select
+                        id="user-role"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        >
+                        <option selected="">Owner</option>
+                        <option value="AD">Admin</option>
+                        <option value="ED">Editor</option>
+                        <option value="CO">Contributor</option>
+                        <option value="VI">Viewer</option>
+                        </select>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="email-status" class="mb-2 inline-flex items-center text-sm font-medium text-gray-900 dark:text-white">
+                        Email Status
+                        <button type="button" data-tooltip-target="tooltip-email-status" data-tooltip-style="dark" class="ml-1 h-4 w-4 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white">
+                            <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                fill-rule="evenodd"
+                                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm9.008-3.018a1.502 1.502 0 0 1 2.522 1.159v.024a1.44 1.44 0 0 1-1.493 1.418 1 1 0 0 0-1.037.999V14a1 1 0 1 0 2 0v-.539a3.44 3.44 0 0 0 2.529-3.256 3.502 3.502 0 0 0-7-.255 1 1 0 0 0 2 .076c.014-.398.187-.774.48-1.044Zm.982 7.026a1 1 0 1 0 0 2H12a1 1 0 1 0 0-2h-.01Z"
+                                clip-rule="evenodd"
+                            />
+                            </svg>
+                            <span class="sr-only">Email status details</span>
+                        </button>
+                        <div id="tooltip-email-status" role="tooltip" class="tooltip invisible absolute z-10 inline-block max-w-sm rounded-lg bg-gray-900 px-3 py-2 text-sm font-normal text-white opacity-0 shadow-sm dark:bg-gray-600">
+                            As an administrator, you can view the status of a user's email. The status indicates whether a user's email is verified or not.
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                        </label>
+                        <select
+                        id="email-status"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        >
+                        <option selected="">Verified</option>
+                        <option value="NV">Not verified</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="password" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                        <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="•••••••••"
+                        required=""
+                        />
+                    </div>
+                    <div>
+                        <label for="confirm-password" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Confirm password</label>
+                        <input
+                        type="password"
+                        name="confirm-password"
+                        id="confirm-password"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="•••••••••"
+                        required=""
+                        />
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="role">Assign Role</label>
+                        <div class="flex space-x-4">
+                        <div class="flex items-center">
+                            <input
+                            id="inline-checkbox"
+                            type="checkbox"
+                            value=""
+                            name="role"
+                            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                            />
+                            <label for="inline-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Administrator</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input
+                            id="inline-2-checkbox"
+                            type="checkbox"
+                            value=""
+                            name="role"
+                            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                            />
+                            <label for="inline-2-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Member</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input
+                            checked=""
+                            id="inline-checked-checkbox"
+                            type="checkbox"
+                            value=""
+                            name="role"
+                            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                            />
+                            <label for="inline-checked-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Viewer</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Status</div>
+                        <label for="status" class="relative inline-flex cursor-pointer items-center">
+                        <input type="checkbox" value="" id="status" class="peer sr-only" />
+                        <div
+                            class="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-primary-800"
+                        ></div>
+                        <span class="ml-3 text-sm font-medium text-gray-500 dark:text-gray-300">Inactive</span>
+                        </label>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <h2 id="accordion-collapse-heading-2">
+                <button
+                    type="button"
+                    class="flex w-full items-center justify-between border-t border-gray-200 bg-gray-50 px-4 py-4 text-left font-medium leading-none text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:border-gray-700 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800 sm:px-5"
+                    data-accordion-target="#accordion-collapse-body-2"
+                    aria-expanded="false"
+                    aria-controls="accordion-collapse-body-2"
+                >
+                    <span>Additional Information</span>
+                    <svg data-accordion-icon="" class="h-5 w-5 shrink-0 rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7" />
+                    </svg>
+                </button>
+                </h2>
+                <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+                <div class="border-gray-200 px-4 pt-4 dark:border-gray-700 sm:px-5 sm:pt-5">
+                    <!-- Inputs -->
+                    <div class="grid gap-4 sm:grid-cols-2">
+                    <div class="col-span-2">
+                        <label for="skills" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Skills</label>
+                        <input
+                        type="text"
+                        name="skills"
+                        id="skills"
+                        value="Tailwind CSS, Flowbite, React"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="Ex. Figma, HTML, Javascript"
+                        required=""
+                        />
+                    </div>
+                    <div class="col-span-2">
+                        <label for="phone-number" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
+                        <input
+                        type="text"
+                        name="phone-number"
+                        id="phone-number"
+                        value="+1631 442 978"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="Ex. +1234 567 890"
+                        required=""
+                        />
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="linkedin" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Linkedin URL</label>
+                        <input
+                        type="url"
+                        name="linkedin"
+                        id="linkedin"
+                        value="https://www.linkedin.com/in/bonniegreen/"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="Ex. https://www.linkedin.com/in/example/"
+                        required=""
+                        />
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="facebook" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Facebook</label>
+                        <input
+                        type="url"
+                        name="facebook"
+                        id="facebook"
+                        value="https://www.facebook.com/bonniegreen"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="Ex. https://www.facebook.com/example"
+                        required=""
+                        />
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="twitter" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Twitter</label>
+                        <input
+                        type="url"
+                        name="twitter"
+                        id="twitter"
+                        value="https://twitter.com/bonniegreen"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="Ex. https://twitter.com/example"
+                        required=""
+                        />
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="personal-website" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Personal Website</label>
+                        <input
+                        type="url"
+                        name="personal-website"
+                        id="personal-website"
+                        value="https://flowbite.com"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="Ex. https://website.com"
+                        required=""
+                        />
+                    </div>
+                    <div class="col-span-2">
+                        <label for="country" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Country</label>
+                        <select
+                        id="country"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        >
+                        <option selected="">United States</option>
+                        <option value="NO">Australia</option>
+                        <option value="NO">United Kingdom</option>
+                        <option value="NO">Italy</option>
+                        <option value="NO">Germany</option>
+                        <option value="NO">Spain</option>
+                        <option value="NO">France</option>
+                        <option value="NO">Canada</option>
+                        </select>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="address" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Address</label>
+                        <input
+                        type="text"
+                        name="address"
+                        id="address"
+                        value="92 Milles Drive, Newark, NJ 07123"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="Ex. 92 Milles Drive, Newark, NJ 07123"
+                        required=""
+                        />
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="timezone" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Timezone</label>
+                        <input
+                        type="text"
+                        name="timezone"
+                        id="timezone"
+                        value="GMT+3"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="Ex. GMT+2"
+                        required=""
+                        />
+                    </div>
+                    <div class="col-span-2">
+                        <label for="biography" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Biography</label>
+                        <textarea
+                        id="biography"
+                        rows="4"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder:text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        placeholder="Write your biography..."
+                        >
+        Hello, I'm Helene Engels, USA Designer, Creating things that stand out, Featured by Adobe, Figma, Webflow and others, Daily design tips & resources, Exploring Web3.</textarea
+                        >
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 px-4 py-4 sm:px-5 sm:py-5">
+                <button
+                type="submit"
+                class="rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                >
+                Update user
+                </button>
+                <button
+                type="button"
+                class="focus:outline-non inline-flex items-center rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                >
+                <svg class="-ms-0.5 me-1.5 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                    fill-rule="evenodd"
+                    d="M8.6 2.6A2 2 0 0 1 10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 1 1 0 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a1 1 0 0 1 0-2h3V4c0-.5.2-1 .6-1.4ZM10 6h4V4h-4v2Zm1 4a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Zm4 0a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Z"
+                    clip-rule="evenodd"
+                    />
+                </svg>
+                Delete
+                </button>
+            </div>
+            </form>
+        </div>
+        </div>
+
+    <!-- Edit profile picture modal -->
+    <div id="profilePictureModal" tabindex="-1" aria-hidden="true" class="fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0">
+    <div class="relative max-h-full w-full max-w-lg p-4">
+        <!-- Modal content -->
+        <div class="relative rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:p-5">
+        <!-- Modal header -->
+        <div class="mb-4 flex items-center justify-between rounded-t sm:mb-5">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Update Foto Profile</h3>
+            <button
+            type="button"
+            class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+            data-modal-toggle="profilePictureModal"
+            >
+            <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+            </svg>
+
+            <span class="sr-only">Close modal</span>
+            </button>
+        </div>
+        <!-- Modal body -->
+        <form action="#">
+            <div class="mb-4 sm:mb-5">
+            <label class="sr-only" for="file_input">Upload Avatar</label>
+            <div class="w-full items-center sm:flex">
+                <img class="mb-4 h-24 w-24 rounded-lg sm:mb-0 sm:mr-4" src="http://localhost:1313/images/users/joseph-mcfall.png" alt="Helene avatar" />
+                <div class="w-full">
+                <input
+                    class="w-full cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400"
+                    aria-describedby="file_input_help"
+                    id="file_input"
+                    type="file"
+                />
+                <p class="mb-3 mt-1 text-xs font-normal text-gray-500 dark:text-gray-300" id="file_input_help">PNG & JPG ONLY (MAX. 2MB).</p>
+                <div class="flex items-center space-x-2.5">
+                    <button
+                    type="button"
+                    class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+                    >
+                    <svg class="-ms-0.5 me-1.5 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                        fill-rule="evenodd"
+                        d="M12 3a1 1 0 0 1 .78.375l4 5a1 1 0 1 1-1.56 1.25L13 6.85V14a1 1 0 1 1-2 0V6.85L8.78 9.626a1 1 0 1 1-1.56-1.25l4-5A1 1 0 0 1 12 3ZM9 14v-1H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-4v1a3 3 0 1 1-6 0Zm8 2a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z"
+                        clip-rule="evenodd"
+                        />
+                    </svg>
+
+                    Upload new picture
+                    </button>
+                    <button
+                    type="button"
+                    class="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+                    >
+                    Hapus
+                    </button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <button
+            type="submit"
+            class="rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            >
+            Simpan
+            </button>
+        </form>
+        </div>
+    </div>
+    </div>

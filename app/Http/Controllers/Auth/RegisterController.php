@@ -46,6 +46,7 @@ class RegisterController extends Controller
             'nama_usaha' => ['nullable', 'string', 'max:100'],
             'bidang_usaha' => ['nullable', 'string', 'max:100'],
             'saran' => ['nullable', 'string'],
+            'foto' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
         ]);
 
         // Hash password
@@ -56,10 +57,27 @@ class RegisterController extends Controller
 
         // Handle file upload jika ada foto
         if ($request->hasFile('foto')) {
-            $foto = $request->file('foto');
-            $filename = time() . '.' . $foto->getClientOriginalExtension();
-            $foto->storeAs('public/fotos', $filename);
-            $validated['foto'] = 'fotos/' . $filename;
+            try {
+                $foto = $request->file('foto');
+                $filename = time() . '.' . $foto->getClientOriginalExtension();
+                // Simpan langsung ke direktori public
+                $path = $foto->storeAs('fotos', $filename, 'public');
+                $validated['foto'] = 'fotos/' . $filename;
+                
+                // Debug log untuk upload foto
+                \Log::info('Foto uploaded successfully', [
+                    'original_name' => $foto->getClientOriginalName(),
+                    'path' => $path,
+                    'stored_name' => $validated['foto']
+                ]);
+            } catch (\Exception $e) {
+                \Log::error('Error uploading foto', [
+                    'message' => $e->getMessage(),
+                    'trace' => $e->getTraceAsString()
+                ]);
+            }
+        } else {
+            \Log::info('No foto uploaded with request');
         }
 
         // Buat user baru
