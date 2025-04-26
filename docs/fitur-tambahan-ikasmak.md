@@ -172,3 +172,5 @@ CREATE TABLE events (
 Implementasi fitur-fitur di atas akan meningkatkan nilai sistem IKASMAK secara signifikan, mengubahnya dari sekedar database alumni menjadi platform komunitas yang hidup dan bermanfaat. Pendekatan bertahap direkomendasikan, dengan fokus awal pada fitur-fitur yang meningkatkan jaringan alumni dan peluang karir.
 
 Dengan membangun ekosistem digital yang komprehensif, IKASMAK dapat menjadi jembatan yang efektif antara alumni lintas generasi, mendorong kolaborasi profesional, dan memperkuat ikatan komunitas alumni SAKMA Makassar. 
+
+Request id : c96e272d-ca07-4ca7-91bd-0698eb0eff95

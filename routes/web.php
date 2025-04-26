@@ -74,12 +74,15 @@ Route::view('waiting-approval', 'waiting-approval')
     ->name('waiting-approval');
 
 // Route untuk dashboard admin
+
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     
     // User Verification Routes
     Route::prefix('user-verification')->name('user-verification.')->group(function () {
         Route::get('/', [App\Http\Controllers\Admin\UserVerificationController::class, 'index'])->name('index');
         Route::get('/all', [App\Http\Controllers\Admin\UserVerificationController::class, 'allUsers'])->name('all-users');
+        Route::get('/dashboard', [App\Http\Controllers\Admin\UserVerificationController::class, 'dashboard'])->name('dashboard');
+        Route::post('/batch-verify', [App\Http\Controllers\Admin\UserVerificationController::class, 'batchVerify'])->name('batch-verify');
         Route::get('/{user}', [App\Http\Controllers\Admin\UserVerificationController::class, 'show'])->name('show');
         Route::post('/{user}/approve', [App\Http\Controllers\Admin\UserVerificationController::class, 'approve'])->name('approve');
         Route::post('/{user}/reject', [App\Http\Controllers\Admin\UserVerificationController::class, 'reject'])->name('reject');

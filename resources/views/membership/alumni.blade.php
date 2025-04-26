@@ -91,17 +91,20 @@
   <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
       <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
         <span class="sr-only">Open user menu</span>
-        <img class="w-8 h-8 rounded-full" src="docs/images/people/profile-picture-3.jpg" alt="user photo">
+        <img class="w-8 h-8 rounded-full" src="{{ asset('storage/' . auth()->user()->foto) }}" alt="{{ auth()->user()->nama_lengkap }} photo">
       </button>
       
       <div class="z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow hidden" id="user-dropdown" aria-hidden="true" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(798px, 58px, 0px);">
         <div class="px-4 py-3">
-          <span class="block text-sm text-gray-900">Bonnie Green</span>
-          <span class="block text-sm  text-gray-500 truncate">name@flowbite.com</span>
+          <span class="block text-sm text-gray-900">{{ auth()->user()->nama_lengkap }}</span>
+          <span class="block text-sm text-gray-500 truncate">{{ auth()->user()->email }}</span>
         </div>
         <ul class="py-2" aria-labelledby="user-menu-button">
           <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+            <form method="POST" action="{{ route('logout') }}" class="inline">
+                @csrf
+                <button type="submit" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</button>
+            </form>
           </li>
         </ul>
       </div>
@@ -121,13 +124,13 @@
         <a href="/membership/alumni" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Alumni</a>
       </li>
       <li>
-        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Event</a>
+        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0" onclick="alert('Menu ini bisa diakses user setelah verifikasi Admin IKASMAK. Hubungi Admin angkatan atau admin IKASMAK')">Event</a>
       </li>
       <li>
-        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Lowongan Kerja</a>
+        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0" onclick="alert('Menu ini bisa diakses user setelah verifikasi Admin IKASMAK. Hubungi Admin angkatan atau admin IKASMAK')">Lowongan Kerja</a>
       </li>
       <li>
-        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Blog</a>
+        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0" onclick="alert('Menu ini bisa diakses user setelah verifikasi Admin IKASMAK. Hubungi Admin angkatan atau admin IKASMAK')">Blog</a>
       </li>
     </ul>
   </div>

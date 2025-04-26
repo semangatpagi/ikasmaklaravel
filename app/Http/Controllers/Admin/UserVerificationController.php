@@ -15,13 +15,12 @@ class UserVerificationController extends Controller
      */
     public function index()
     {
-        $usersToVerify = User::whereNotNull('email_verified_at')
-                                ->whereNull('admin_verified_at')
-                                ->where('role', 'unverified')
-                                ->orderBy('created_at', 'asc')
-                                ->paginate(15);
+        $pendingUsers = User::whereNull('admin_verified_at')
+            ->where('role', 'unverified')
+            ->latest()
+            ->paginate(10);
 
-        return view('admin.verify-users', compact('usersToVerify'));
+        return view('admin.user-verification.index', compact('pendingUsers'));
     }
 
     /**
@@ -29,10 +28,49 @@ class UserVerificationController extends Controller
      */
     public function allUsers()
     {
-        $users = User::orderBy('created_at', 'desc')
-            ->paginate(10);
+        $allUsers = User::latest()->paginate(10);
 
-        return view('admin.user-verification.all-users', compact('users'));
+        return view('admin.user-verification.all-users', compact('allUsers'));
+    }
+
+    /**
+     * Display the dashboard.
+     */
+    public function dashboard()
+    {
+        // Mengambil semua pengguna (bisa difilter sesuai kebutuhan)
+        $allUsers = User::select(
+            'id', 
+            'nama_lengkap', 
+            'nama_panggilan', 
+            'angkatan', 
+            'kota_kantor', 
+            'pekerjaan',
+            'admin_verified_at',
+            'role'
+        )->latest()->paginate(15);
+
+        // Data untuk statistik
+        $totalAlumni = User::count();
+        $pendingUsers = User::whereNull('admin_verified_at')->where('role', 'unverified');
+        $verifiedUsers = User::whereNotNull('admin_verified_at')->count();
+        $totalAngkatan = User::distinct('angkatan')->whereNotNull('angkatan')->count('angkatan');
+        
+        // Daftar angkatan untuk filter
+        $angkatan_list = User::distinct('angkatan')
+            ->whereNotNull('angkatan')
+            ->pluck('angkatan')
+            ->sort()
+            ->values();
+
+        return view('admin.user-verification.dashboard', compact(
+            'allUsers', 
+            'totalAlumni', 
+            'pendingUsers', 
+            'verifiedUsers', 
+            'totalAngkatan',
+            'angkatan_list'
+        ));
     }
 
     /**
@@ -124,5 +162,22 @@ class UserVerificationController extends Controller
         } else {
             return redirect()->route('admin.users.verify.index')->with('error', 'User ini tidak dapat diverifikasi saat ini atau sudah diverifikasi.');
         }
+    }
+
+    public function batchVerify(Request $request)
+    {
+        $userIds = $request->input('user_ids', []);
+        
+        if (empty($userIds)) {
+            return redirect()->back()->with('warning', 'Tidak ada pengguna yang dipilih.');
+        }
+
+        $count = User::whereIn('id', $userIds)
+            ->update([
+                'admin_verified_at' => now(),
+                'role' => \DB::raw("CASE WHEN role = 'unverified' THEN 'member' ELSE role END")
+            ]);
+
+        return redirect()->back()->with('success', $count . ' pengguna berhasil diverifikasi.');
     }
 }
